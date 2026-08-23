@@ -9,7 +9,7 @@
 void listContacts(AddressBook *addressBook,int sortCriteria)
 {
     // Sort contacts based on the chosen criteria
-    int choice;
+    int sortCriteria;
     int i, j;
     Contact temp;
 
@@ -20,7 +20,7 @@ void listContacts(AddressBook *addressBook,int sortCriteria)
     printf("Enter your choice: ");
     scanf("%d", &choice);
 
-    switch(choice)
+    switch(sortCriteria)
     {
         case 1:
             for(i = 0; i < addressBook->contactCount - 1; i++)

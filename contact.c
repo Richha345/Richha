@@ -191,7 +191,7 @@ void createContact(AddressBook *addressBook)
                       addressBook->contacts[i].phone) == 0)
             {
                 valid = 0;
-                printf("Re-enter Valid Phone Number. Number already exists!\n");
+                printf("Re-enter Valid Phone Number. Number already exists\n");
                 break;
             }
         }
@@ -220,7 +220,7 @@ void createContact(AddressBook *addressBook)
             if(strcmp(email, addressBook->contacts[i].email) == 0)
             {
                 valid = 0;
-                printf("Re-enter Valid Email. Email already exists!\n");
+                printf("Re-enter Valid Email. Email already exists\n");
                 break;
             }
         }
@@ -304,7 +304,7 @@ void searchContact(AddressBook *addressBook)
 
     switch(choice)
     {
-        //SEARCH BY NAME//
+        //Search by name
         case 1:
 
         printf("Enter Name: ");
@@ -325,7 +325,7 @@ void searchContact(AddressBook *addressBook)
         }
         break;
 
-        //SEARCH BY PHONE NUMBER//
+        //Search by phone number
         case 2:
 
         printf("Enter Phone Number: ");
@@ -346,7 +346,7 @@ void searchContact(AddressBook *addressBook)
         }
         break;
 
-        //SEARCH BY EMAIL-ID//
+        //Search by Email-ID
         case 3:
 
         printf("Enter Email-ID: ");

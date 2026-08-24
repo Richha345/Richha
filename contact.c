@@ -9,7 +9,7 @@
 void listContacts(AddressBook *addressBook,int sortCriteria)
 {
     // Sort contacts based on the chosen criteria
-    int sortCriteria;
+    int choice;
     int i, j;
     Contact temp;
 
@@ -20,7 +20,7 @@ void listContacts(AddressBook *addressBook,int sortCriteria)
     printf("Enter your choice: ");
     scanf("%d", &choice);
 
-    switch(sortCriteria)
+    switch(choice)
     {
         case 1:
             for(i = 0; i < addressBook->contactCount - 1; i++)
@@ -125,8 +125,7 @@ void createContact(AddressBook *addressBook)
         //Check duplicate name
         for(i=0; i < addressBook->contactCount; i++)
         {
-            if(strcmp(addressBook->contacts[addressBook->contactCount].name,
-                addressBook->contacts[i].name) == 0)
+            if(strcmp(addressBook->contacts[addressBook->contactCount].name, addressBook->contacts[i].name) == 0)
                 {
                     valid = 0;
                     printf("Re - enter Valid Name, Name already exists\n");
@@ -177,18 +176,17 @@ void createContact(AddressBook *addressBook)
       continue;
 
    //Check 10 digits and first digit greater than 5 
-        if(strlen(addressBook->contacts[addressBook->contactCount].phone) != 10 ||
+        if(strlen(addressBook->contacts[addressBook->contactCount].phone) != 10 || 
            addressBook->contacts[addressBook->contactCount].phone[0] < '6')
         {
-            printf("Re-enter Phone Number. It should have 10 digits and start from 6-9!\n");
+            printf("Re-enter Phone Number. It should have 10 digits and start from 6-9\n");
             continue;
         }
 
       //Check duplicate phone 
         for(i = 0; i < addressBook->contactCount; i++)
         {
-            if(strcmp(addressBook->contacts[addressBook->contactCount].phone,
-                      addressBook->contacts[i].phone) == 0)
+            if(strcmp(addressBook->contacts[addressBook->contactCount].phone, addressBook->contacts[i].phone) == 0)
             {
                 valid = 0;
                 printf("Re-enter Valid Phone Number. Number already exists\n");

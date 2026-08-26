@@ -6,6 +6,10 @@
 #include <ctype.h>
 //#include "populate.h"
 
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------//
+
+
 void display(AddressBook *addressBook)
 {
     printf("Sl.no\tName\t\tPhone Number\tEmail ID\n");
@@ -76,6 +80,11 @@ void sortby_email(AddressBook *addressBook)
 
     display(addressBook);
 }
+
+
+//-----------------------------------------------------------------display contacts---------------------------------------------------------------------------------//
+
+
 void listContacts(AddressBook *addressBook,int sortCriteria)
 {
     // Sort contacts based on the chosen criteria
@@ -123,7 +132,7 @@ void initialize(AddressBook *addressBook) {
     addressBook->contactCount = 0;
     
     // Load contacts from file during initialization (After files)
-    //loadContactsFromFile(addressBook);
+    loadContactsFromFile(addressBook);
 }
 
 void saveAndExit(AddressBook *addressBook) {

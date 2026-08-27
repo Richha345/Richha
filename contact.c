@@ -12,16 +12,18 @@
 
 void display(AddressBook *addressBook)
 {
-    printf("Sl.no\tName\t\tPhone Number\tEmail ID\n");
-
+    printf("\n-------------------------------------------------------------------------------------");
+    printf("\nSl.no\tName\t\tPhone Number\tEmail ID\n");
+    printf("-------------------------------------------------------------------------------------\n");
     for (int i = 0; i < addressBook->contactCount; i++)
     {
-        printf("%d\t%s\t\t%s\t%s\n",
+        printf("  %d\t%s\t\t%s\t%s\n",
                i + 1,
                addressBook->contacts[i].name,
                addressBook->contacts[i].phone,
                addressBook->contacts[i].email);
     }
+    printf("-------------------------------------------------------------------------------------\n");
 }
 
 void sortby_name(AddressBook *addressBook)
@@ -85,7 +87,7 @@ void sortby_email(AddressBook *addressBook)
 //-----------------------------------------------------------------display contacts---------------------------------------------------------------------------------//
 
 
-void listContacts(AddressBook *addressBook,int sortCriteria)
+void listContacts(AddressBook *addressBook)
 {
     // Sort contacts based on the chosen criteria
     int choice;
@@ -279,6 +281,10 @@ int email_validation(char *email, AddressBook *addressBook, int index)
     return 1;
 }
 
+
+//-----------------------------------------------------------------create contacts---------------------------------------------------------------------------------//
+
+
 void createContact(AddressBook *addressBook)
 {
 	/* Define the logic to create a Contacts */
@@ -332,19 +338,21 @@ void search_display_name(AddressBook *addressBook, char *search)
             // Print heading only once
             if (flag == 0)
             {
+                printf("\n-------------------------------------------------------------------------------------\n");
                 printf("Sl.no\tName\t\tPhone Number\tEmail ID\n");
+                 printf("-------------------------------------------------------------------------------------\n");
                 flag = 1;
             }
 
             // Display matching contact
-            printf("%d\t%s\t\t%s\t%s\n",
+            printf("  %d\t%s\t\t%s\t%s\n",
                    i + 1,
                    addressBook->contacts[i].name,
                    addressBook->contacts[i].phone,
                    addressBook->contacts[i].email);
         }
     }
-
+ printf("-------------------------------------------------------------------------------------\n");
     // Display message if no contact is found
     if (flag == 0)
     {
@@ -365,19 +373,21 @@ void search_display_phone(AddressBook *addressBook, char *search)
             // Print heading when first match is found
             if (flag == 0)
             {
+                printf("\n-------------------------------------------------------------------------------------\n");
                 printf("Sl.no\tName\t\tPhone Number\tEmail ID\n");
+                 printf("-------------------------------------------------------------------------------------\n");
                 flag = 1;
             }
 
             // Display matching contact
-            printf("%d\t%s\t\t%s\t%s\n",
+            printf("  %d\t%s\t\t%s\t%s\n",
                    i + 1,
                    addressBook->contacts[i].name,
                    addressBook->contacts[i].phone,
                    addressBook->contacts[i].email);
         }
     }
-
+ printf("-------------------------------------------------------------------------------------\n");
     // Display message if no contact is found
     if (flag == 0)
     {
@@ -398,14 +408,17 @@ void search_display_email(AddressBook *addressBook, char *search)
             // Print heading when first match is found
             if (flag == 0)
             {
+                printf("\n-------------------------------------------------------------------------------------\n");
                 printf("Sl.no\tName\t\tPhone Number\tEmail ID\n");
+                 printf("-------------------------------------------------------------------------------------\n");
                 flag = 1;
             }
 
             // Display matching contact
-            printf("%d\t%s\t\t%s\t%s\n", i + 1, addressBook->contacts[i].name, addressBook->contacts[i].phone, addressBook->contacts[i].email);
+            printf("  %d\t%s\t\t%s\t%s\n", i + 1, addressBook->contacts[i].name, addressBook->contacts[i].phone, addressBook->contacts[i].email);
         }
     }
+    printf("-------------------------------------------------------------------------------------\n");
 
     // Display message if no contact is found
     if (flag == 0)
@@ -413,6 +426,10 @@ void search_display_email(AddressBook *addressBook, char *search)
         printf("Contact not found.\n");
     }
 }
+
+
+//-----------------------------------------------------------------search contacts---------------------------------------------------------------------------------//
+
 
 void searchContact(AddressBook *addressBook)
 {
@@ -470,6 +487,11 @@ void read_index(int *index, AddressBook *addressBook)
         scanf("%d", index);
     }
 }
+
+
+//-----------------------------------------------------------------edit contacts---------------------------------------------------------------------------------//
+
+
 void editContact(AddressBook *addressBook)
 {
 	/* Define the logic for Editcontact */
@@ -582,6 +604,10 @@ void delete_contact(AddressBook *addressBook, int index)
 
     printf("Contact deleted successfully.\n");
 }
+
+
+//-----------------------------------------------------------------delete contacts---------------------------------------------------------------------------------//
+
 
 void deleteContact(AddressBook *addressBook)
 {

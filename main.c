@@ -38,7 +38,7 @@ int main() {
                 //printf("3. Email\n");
                 //printf("Enter your choice: ");
                 //scanf("%d", &sortChoice);    
-                listContacts(&addressBook, sortChoice);
+                listContacts(&addressBook);
                 break;
             case 6:
                 printf("Saving...\n");

@@ -90,7 +90,7 @@ void sortby_email(AddressBook *addressBook)
 void listContacts(AddressBook *addressBook)
 {
     // Sort contacts based on the chosen criteria
-    int choice;
+    int sortCriteria;
 
     while (1)
     {
@@ -100,18 +100,19 @@ void listContacts(AddressBook *addressBook)
         printf("3. Email ID\n");
         printf("4. Exit\n");
         printf("Enter choice: ");
-        scanf("%d", &choice);
+        scanf("%d", &sortCriteria);
 
-        switch (choice)
+        switch (sortCriteria)
         {
+            //Sort and display by name
             case 1:
                 sortby_name(addressBook);
                 continue;
-
+            //Sort and display by phone
             case 2:
                 sortby_phone(addressBook);
                 continue;
-
+            ////Sort and display by email id
             case 3:
                 sortby_email(addressBook);
                 continue;
